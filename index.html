@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Título e Meta Tags de SEO -->
+  <title>Meu Uso Tecnológico | Conscientização Digital</title>
+  <meta name="description" content="Aplicativo interativo para monitoramento, cálculo e conscientização do tempo de uso de telas e dispositivos tecnológicos.">
+  <meta name="author" content="DevSouza208">
+  <meta name="keywords" content="tempo de tela, uso tecnologico, tecnologia, saude digital, controle de tempo, dashboard">
+  <meta name="theme-color" content="#121212">
+
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Open Graph / Redes Sociais (WhatsApp, LinkedIn, Facebook) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Meu Uso Tecnológico">
+  <meta property="og:description" content="Acompanhe e analise seu tempo de tela diário e semanal por dispositivo.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Meu Uso Tecnológico">
+  <meta name="twitter:description" content="Gerencie seu tempo de uso de telas e viva de forma mais consciente.">
+
+  <!-- CSS & Fontes Externas -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="overlay">
+    
+    <!-- Botão de Reset Geral no Canto Superior Direito -->
+    <button id="reset-all-btn" class="reset-icon-btn" title="Limpar todos os registros">
+      <i class="fa-solid fa-trash-can"></i>
+    </button>
+
+    <!-- Cabeçalho Principal -->
+    <header class="main-header">
+      <h1>Meu uso tecnológico</h1>
+
+      <!-- Dashboard de Resumo no Topo -->
+      <section class="dashboard-top">
+        <div class="dash-card">
+          <span class="dash-label">Média Diária</span>
+          <span class="dash-value" id="daily-hours">0 H/dia</span>
+        </div>
+        <div class="dash-card">
+          <span class="dash-label">Tempo Total</span>
+          <span class="dash-value" id="total-hours">0 H/sem</span>
+        </div>
+        <div class="dash-card">
+          <span class="dash-label">Mais Usado</span>
+          <span class="dash-value" id="top-device">-</span>
+        </div>
+        <button id="open-details-btn" class="dash-card details-btn-card" title="Ver detalhamento por dia da semana">
+          <i class="fa-solid fa-chart-simple"></i>
+          <span>Detalhes</span>
+        </button>
+      </section>
+
+      <!-- Navegação por Abas -->
+      <nav class="nav-tabs">
+        <button id="tab-add" class="tab-btn active">Adicionar Uso</button>
+        <button id="tab-view" class="tab-btn">Ver Usos (<span id="record-count">0</span>)</button>
+      </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="content-container">
+      
+      <!-- ABA 1: Formulário de Registro -->
+      <section id="section-form" class="view-section active">
+        <div class="card form-card">
+          <h2 class="form-title">Registrar Uso</h2>
+
+          <!-- Seleção de Dias da Semana -->
+          <div class="section-group">
+            <label>Dias de uso</label>
+            <div class="pill-group" id="days-group">
+              <button type="button" class="pill circle day-pill" data-value="Dom">Dom</button>
+              <button type="button" class="pill circle day-pill" data-value="Seg">Seg</button>
+              <button type="button" class="pill circle day-pill" data-value="Ter">Ter</button>
+              <button type="button" class="pill circle day-pill" data-value="Qua">Qua</button>
+              <button type="button" class="pill circle day-pill" data-value="Qui">Qui</button>
+              <button type="button" class="pill circle day-pill" data-value="Sex">Sex</button>
+              <button type="button" class="pill circle day-pill" data-value="Sáb">Sáb</button>
+            </div>
+          </div>
+
+          <!-- Slider de Tempo de Uso -->
+          <div class="section-group">
+            <div class="label-with-value">
+              <label>Tempo de uso por dia</label>
+              <span id="slider-hours-val" class="time-badge">2 Horas</span>
+            </div>
+            <div class="slider-container">
+              <input type="range" id="time-slider" min="0.5" max="12" step="0.5" value="2">
+              <div class="slider-labels">
+                <span>30m</span>
+                <span>6h</span>
+                <span>12h</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Seleção do Dispositivo -->
+          <div class="section-group">
+            <label>Dispositivo</label>
+            <div class="pill-group grid-devices" id="device-group">
+              <button type="button" class="pill rect" data-value="Celular">Celular</button>
+              <button type="button" class="pill rect" data-value="Televisão">Televisão</button>
+              <button type="button" class="pill rect" data-value="Desktop">Desktop</button>
+              <button type="button" class="pill rect" data-value="Tablet">Tablet</button>
+              <button type="button" class="pill rect" data-value="Video Game">Video Game</button>
+              <button type="button" class="pill rect" data-value="Notebook">Notebook</button>
+            </div>
+          </div>
+
+          <!-- Nome / Descrição da Atividade -->
+          <div class="section-group">
+            <input type="text" id="activity-name" placeholder="Ex: Jogar Fifa, Estudar, TikTok..." />
+          </div>
+
+          <button id="add-btn" class="submit-btn">Adicionar Registro</button>
+        </div>
+      </section>
+
+      <!-- ABA 2: Lista de Cards com Filtros -->
+      <section id="section-list" class="view-section">
+        <div class="list-wrapper">
+          <!-- Barra de Filtros -->
+          <div class="filter-bar">
+            <div class="filter-group">
+              <label for="sort-by"><i class="fa-solid fa-arrow-down-wide-short"></i> Ordenar por:</label>
+              <select id="sort-by">
+                <option value="total">Total de tempo na semana</option>
+                <option value="session">Tempo por uso (Sessão)</option>
+                <option value="name">Nome da atividade</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="sort-order">Ordem:</label>
+              <select id="sort-order">
+                <option value="desc">Maior para menor</option>
+                <option value="asc">Menor para maior</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Grid dos Cards -->
+          <div class="cards-grid" id="cards-container"></div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Rodapé Completo com Easter Egg da Codifica Edu -->
+    <footer class="main-footer">
+      <p>
+        Desenvolvido com 
+        <a href="https://codificaedu.com.br/" target="_blank" rel="noopener noreferrer" class="easter-egg-heart" title="Codifica Edu 💜">
+          <i class="fa-solid fa-heart"></i>
+        </a> 
+        por <strong>DevSouza208</strong> &copy; 2026
+      </p>
+
+      <p class="footer-subtitle">Conscientização e bem-estar digital.</p>
+      
+      <div class="footer-links">
+        <a href="https://github.com/DevSouza208" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Modal 1: Detalhes do Uso por Dia da Semana -->
+  <div id="details-modal" class="modal-backdrop">
+    <div class="modal-box modal-wide">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-calendar-week"></i> Uso por Dia da Semana</h3>
+        <button id="close-details-btn" class="close-icon-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="day-breakdown-list" id="day-breakdown-container"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Confirmação de Reset Geral -->
+  <div id="reset-modal" class="modal-backdrop">
+    <div class="modal-box">
+      <h3>Limpar todos os registros?</h3>
+      <p>Tem certeza que deseja apagar todos os registros de uso armazenados? Esta ação não pode ser desfeita!</p>
+      <div class="modal-actions">
+        <button id="cancel-reset-btn" class="btn-secondary">Voltar</button>
+        <button id="confirm-reset-btn" class="btn-danger">Sim, Limpar Tudo</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
