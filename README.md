@@ -2,9 +2,17 @@
 
 > Uma aplicação web moderna e interativa para **monitoramento, cálculo e conscientização do tempo de uso de telas** e dispositivos digitais durante a semana.
 
+[![Acessar o App](https://img.shields.io/badge/🚀_Acessar_App-meu--uso--tecnologico.vercel.app-8A2BE2?style=for-the-badge)](https://meu-uso-tecnologico.vercel.app/)
+
 ![Licença](https://img.shields.io/badge/license-MIT-purple)
 ![Versão](https://img.shields.io/badge/version-1.0.0-00e676)
 ![Status](https://img.shields.io/badge/status-concluído-brightgreen)
+
+---
+
+## 🌐 Link do Projeto Online
+
+🔗 **Acesse o app ao vivo:** [https://meu-uso-tecnologico.vercel.app/](https://meu-uso-tecnologico.vercel.app/)
 
 ---
 
@@ -33,12 +41,13 @@ O **Meu Uso Tecnológico** permite que usuários registrem suas atividades diár
 - **HTML5:** Estruturação semântica e acessível com meta tags para SEO e redes sociais (Open Graph).
 - **CSS3:** Estilização moderna com CSS Grid, Flexbox, variáveis nativas, animações e efeitos neon/blur.
 - **JavaScript (Vanilla JS):** Manipulação da DOM, cálculo de métricas e persistência com `localStorage`.
+- **Vercel:** Hospedagem e deploy contínuo.
 - **Font Awesome:** Ícones vetoriais modernos para os cards e interface.
 - **SVG:** Favicon personalizado leve e escalável.
 
 ---
 
-## 🚀 Como Executar o Projeto
+## 🚀 Como Executar Localmente
 
 1. **Clone o repositório:**
    ```bash
