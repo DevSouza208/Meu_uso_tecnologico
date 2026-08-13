@@ -52,3 +52,12 @@ O **Meu Uso Tecnológico** permite que usuários registrem suas atividades diár
 1. **Clone o repositório:**
    ```bash
    git clone [https://github.com/DevSouza208/meu-uso-tecnologico.git](https://github.com/DevSouza208/meu-uso-tecnologico.git)
+
+## 👨‍💻 Autor
+
+Desenvolvido por **DevSouza208** 🚀
+
+- 🐙 **GitHub:** [@DevSouza208](https://github.com/DevSouza208)
+- 🌐 **App:** [meu-uso-tecnologico.vercel.app](https://meu-uso-tecnologico.vercel.app/)
+
+---
