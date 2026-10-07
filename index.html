@@ -10,7 +10,29 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="app-shell">
+  <section id="launch-screen" class="launch-screen" aria-label="Iniciar experiência">
+    <div class="launch-glow launch-glow-a"></div>
+    <div class="launch-glow launch-glow-b"></div>
+
+    <div class="launch-content">
+      <span class="launch-kicker">MOSTRA CULTURAL</span>
+
+      <button id="launch-btn" class="launch-button" type="button" aria-label="Começar experiência em tela cheia">
+        <span class="launch-play" aria-hidden="true">▶</span>
+        <span class="launch-label">
+          <strong>Começar</strong>
+          <small>clique para entrar</small>
+        </span>
+      </button>
+
+      <h1>Meu Uso Tecnológico</h1>
+      <p>Uma experiência rápida para enxergar como o seu tempo se distribui.</p>
+    </div>
+  </section>
+
+  <main id="app-shell" class="app-shell kiosk-hidden" aria-hidden="true">
+    <div id="fit-stage" class="fit-stage">
+      <div id="fit-content" class="fit-content">
 
     <header class="topbar">
       <div class="brand">
@@ -240,6 +262,8 @@
       <span>•</span>
       <span>DevSouza208</span>
     </footer>
+      </div>
+    </div>
   </main>
 
   <script src="script.js"></script>
