@@ -100,119 +100,6 @@ const TIME_VALUES = [
   { label: "4h+", value: 4 }
 ];
 
-const COMMENTS = {
-  balanced: [
-    "🙂 Seu uso digital pessoal parece ocupar uma parte menor da sua semana.",
-    "🌱 Seu tempo parece estar bem distribuído entre diferentes atividades.",
-    "😌 Parece haver bastante espaço na sua rotina para experiências fora das telas.",
-    "👏 Legal! A tecnologia parece ser apenas uma parte do seu dia.",
-    "🌤️ Seu resultado mostra uma rotina relativamente equilibrada.",
-    "🧩 A tecnologia é uma das peças do seu dia, não a única.",
-    "🙂 Ainda sobra bastante espaço para outras experiências.",
-    "🌿 Seu uso digital parece dividir espaço com outras atividades.",
-    "👀 Interessante! As telas não parecem dominar sua rotina pessoal.",
-    "⭐ Você parece ter encontrado um ritmo confortável.",
-    "🧠 Seu resultado mostra variedade no uso do tempo.",
-    "📚 Leitura, convivência, movimento e hobbies também aparecem no seu dia.",
-    "🙂 Seu uso de tecnologia não parece ocupar todo o seu tempo livre.",
-    "⏳ Seu tempo está distribuído de um jeito interessante.",
-    "🌈 Sua rotina parece ter uma boa mistura de atividades.",
-    "💚 Nem todo tempo livre está virando tempo de tela.",
-    "🪁 Parece que ainda sobra bastante espaço fora das telas.",
-    "🤓 Seu retrato de tempo ficou bem variado.",
-    "🌱 Pequenos hábitos assim fazem bastante diferença ao longo do ano.",
-    "😊 Continue percebendo como cada atividade ocupa espaço na sua rotina."
-  ],
-  moderate: [
-    "👀 Opa… já são algumas horas da sua semana, hein?",
-    "🤔 Parece pouco quando olhamos cada atividade separada, mas olha como vai somando.",
-    "⏰ Algumas horinhas por dia viram bastante tempo no fim da semana.",
-    "🙂 Não é uma bronca, mas vale observar para onde esse tempo está indo.",
-    "📱 Pequenos momentos digitais vão ocupando espaços do dia sem a gente perceber.",
-    "🎮 Entre mensagens, entretenimento e jogos, o tempo cresce rapidinho.",
-    "📺 Um vídeo aqui, outro ali… e a semana acumula muitas horas.",
-    "🤔 Se você recuperasse uma hora por dia, o que faria com ela?",
-    "👀 Seu uso digital pessoal já ocupa uma parte importante do tempo livre.",
-    "🧠 Talvez valha observar quais dessas horas realmente valem a pena para você.",
-    "⏳ Não parece tanto olhando uma atividade por vez, né?",
-    "📊 Quando juntamos a semana inteira, a história muda um pouco.",
-    "🙂 Tecnologia faz parte da rotina. A curiosidade é perceber quanto.",
-    "👓 Seu resultado está numa faixa interessante para observar.",
-    "💭 Será que todo esse tempo foi escolhido ou parte aconteceu no automático?",
-    "📱 Quantas vezes você abre um aplicativo sem ter planejado?",
-    "🧩 Seu dia tem muitas peças. Quanto espaço você quer dar às telas?",
-    "🕐 Alguns minutos repetidos várias vezes viram horas.",
-    "🤔 Seu resultado é um bom convite para prestar atenção na rotina.",
-    "🌤️ Não é sobre abandonar a tecnologia — é sobre perceber o uso."
-  ],
-  high: [
-    "😮 Nossa… isso já é bastante tempo, não é?",
-    "👀 As atividades digitais pessoais ocupam uma parte grande da sua semana.",
-    "⏳ Quando transformamos pequenos períodos em horas, o número impressiona.",
-    "😯 Parece menos quando esse tempo está espalhado ao longo dos dias.",
-    "📱 Seu entretenimento e comunicação digital estão recebendo uma boa parcela do seu tempo.",
-    "🎮 Jogos, redes, mensagens e vídeos podem somar muito mais do que parece.",
-    "📺 Dá para fazer bastante coisa no tempo que aparece aqui.",
-    "🤔 Será que você imaginava que daria tudo isso?",
-    "😮 Quando juntamos as atividades, fica mais fácil perceber.",
-    "🧠 Talvez seja interessante experimentar pequenas pausas ao longo do dia.",
-    "👀 Uma hora a menos por dia já mudaria bastante esse resultado.",
-    "⌛ Seu uso digital pessoal já preenche muitas horas da semana.",
-    "😲 Isso é mais tempo do que parece quando usamos aos poucos.",
-    "📊 Os números não estão julgando você — só deixando o hábito mais visível.",
-    "🤔 Qual atividade digital você reduziria primeiro se quisesse recuperar tempo?",
-    "🌱 Pequenas mudanças diárias viram grandes mudanças no mês.",
-    "👣 Não precisa mudar tudo de uma vez. Observar já é um começo.",
-    "📵 Talvez algumas partes do dia possam virar momentos sem tela.",
-    "🧩 Seu resultado mostra como hábitos pequenos podem ocupar espaços grandes.",
-    "😮 Vale pensar: esse tempo combina com o que você gostaria para sua rotina?"
-  ],
-  veryHigh: [
-    "😳 Uau… quando vemos o total assim, impressiona bastante.",
-    "🤯 Isso pode virar muitos dias inteiros ao longo do ano!",
-    "👀 Nossa, isso é bastante, não é?",
-    "⏰ Seu uso digital pessoal ocupa uma parte enorme da sua semana.",
-    "😮 Talvez você nunca tivesse somado essas atividades desse jeito.",
-    "📱 Algumas horas por dia podem virar semanas inteiras ao longo do ano.",
-    "🤔 E se uma pequena parte desse tempo fosse usada de outro jeito?",
-    "🧠 Não precisa abandonar a tecnologia — mas talvez valha escolher melhor alguns momentos.",
-    "😲 O número parece grande porque pequenos hábitos se acumulam todos os dias.",
-    "📊 É exatamente por isso que medir o tempo pode ser tão interessante.",
-    "👣 Uma mudança de 30 minutos por dia já faria diferença aqui.",
-    "⌛ Imagine recuperar algumas dessas horas todo mês.",
-    "🌿 Talvez seja uma boa oportunidade de criar alguns momentos sem tela.",
-    "😮 Seu resultado mostra como é fácil perder a noção quando estamos entretidos.",
-    "👀 Você imaginava chegar nesse número?",
-    "📱 O “só mais cinco minutos” pode virar muita coisa ao longo de um mês.",
-    "💭 O que você gostaria de fazer se tivesse algumas dessas horas de volta?",
-    "🛑 Talvez algumas pausas durante o dia façam bem.",
-    "🌱 Não é uma bronca — é só um convite para perceber.",
-    "💚 Tecnologia é ótima. O desafio é decidir conscientemente quanto espaço ela ocupa."
-  ],
-  reflection: [
-    "📚 O tempo dedicado à leitura também cresce bastante quando somamos a semana.",
-    "🤓 Cada meia hora dedicada a alguma atividade vai se acumulando.",
-    "📖 Pequenos hábitos podem ocupar muitas páginas da nossa história.",
-    "🌱 Seu tempo fora das telas também merece aparecer nesse resultado.",
-    "📚 Imagine quantas experiências cabem nas horas de uma semana.",
-    "⭐ É interessante perceber quais atividades estão ganhando mais espaço na rotina.",
-    "🧠 Nem todo tempo diante de uma tela tem o mesmo propósito.",
-    "📖 Um pouco de leitura por dia pode virar muitas horas ao longo do ano.",
-    "🌟 Pequenas escolhas também se acumulam para o lado positivo.",
-    "📚 Comparar leitura, convivência e entretenimento pode revelar muita coisa.",
-    "🍽️ Alguns momentos do dia podem funcionar muito bem sem celular por perto.",
-    "🌙 O fim do dia também pode ser um espaço para desacelerar.",
-    "💤 Até a tecnologia pode ter hora para descansar.",
-    "🗣️ Algumas pausas de tela podem virar conversa com alguém.",
-    "🚶 Parte do tempo pode virar movimento, passeio ou brincadeira.",
-    "🎨 Algumas horas também podem virar desenho, música, cozinha ou criação.",
-    "👀 O objetivo não é usar menos tecnologia a qualquer custo — é usar com intenção.",
-    "💡 Saber quanto tempo usamos já muda a forma como enxergamos nossos hábitos.",
-    "🧭 Você decide como usar seu tempo. Os números só ajudam a enxergar o caminho.",
-    "💚 Tecnologia faz parte da vida. O importante é perceber como estamos usando nosso tempo."
-  ]
-};
-
 const CHART_META = {
   messages: ["💬", "Mensagens e chamadas", "digital"],
   family: ["👨‍👩‍👧", "Convívio presencial", "offline"],
@@ -226,6 +113,88 @@ const CHART_META = {
   otherDigital: ["🧭", "Outros usos digitais", "digital"]
 };
 
+const MAIN_COMMENTS = {
+  low: [
+    ["🙂", "Interessante! Seu uso digital pessoal ficou relativamente compacto quando olhamos a semana inteira."],
+    ["🌱", "Olha só: a tecnologia aparece na sua rotina, mas divide espaço com várias outras atividades."],
+    ["🧩", "Seu retrato ficou bem variado — as telas são uma das peças do seu dia, não a única."],
+    ["👀", "Quando juntamos tudo, seu uso digital pessoal ficou menor do que muita gente imagina ao pensar em pequenos acessos ao longo do dia."],
+    ["😊", "Seu resultado mostra bastante espaço para atividades diferentes ao longo da semana."]
+  ],
+  medium: [
+    ["👀", "Opa… somando os pequenos momentos, já aparecem algumas boas horas de uso digital na semana."],
+    ["🤔", "Separadas, as atividades parecem pequenas. Juntas, elas contam uma história bem mais interessante."],
+    ["⏳", "Alguns minutos aqui e ali viraram várias horas quando colocamos a semana inteira no papel."],
+    ["📊", "É curioso como o total muda quando deixamos de pensar em 'tempo no celular' e olhamos atividade por atividade."],
+    ["🙂", "Seu resultado não é uma nota — é um retrato. E já dá para enxergar onde boa parte do tempo está indo."],
+    ["🧠", "Talvez você não imaginasse esse total antes de somar cada pedacinho da rotina."]
+  ],
+  high: [
+    ["😮", "Nossa… quando juntamos todas as atividades digitais pessoais, o total chama atenção, não é?"],
+    ["👀", "Olha só quanto aqueles pequenos momentos espalhados pelo dia conseguem somar em uma semana."],
+    ["⏰", "O número ficou grande porque hábitos pequenos, repetidos todos os dias, viram muitas horas."],
+    ["🤔", "Será que você imaginava chegar nesse total antes de responder atividade por atividade?"],
+    ["📱", "Seu resultado mostra bem como o uso digital pode crescer sem parecer tão grande em cada momento isolado."],
+    ["🧩", "Nada aqui é uma bronca — os números só deixam visível algo que normalmente fica espalhado ao longo do dia."]
+  ],
+  veryHigh: [
+    ["😳", "Uau… olhando tudo junto, o total realmente impressiona."],
+    ["🤯", "É muita coisa somada em pequenos pedaços do dia. Talvez fosse difícil imaginar esse número sem fazer a conta."],
+    ["👀", "Nossa, isso é bastante tempo, não é? O curioso é que ele provavelmente não parece tão grande enquanto está espalhado pelo dia."],
+    ["📊", "Esse é exatamente o tipo de número que fica escondido quando pensamos apenas em cada aplicativo separadamente."],
+    ["⏳", "Pequenos hábitos repetidos muitas vezes podem ocupar um espaço enorme quando olhamos o mês ou o ano inteiro."],
+    ["🌱", "O objetivo não é julgar o número — é enxergá-lo. Agora você sabe um pouco melhor onde seu tempo está indo."]
+  ]
+};
+
+const INSIGHT_VARIANTS = {
+  topDigital: [
+    (label, hours) => `Entre os usos digitais, <strong>${label}</strong> foi o que mais apareceu: cerca de <strong>${hours}</strong> na semana.`,
+    (label, hours) => `🏆 No seu mapa digital, <strong>${label}</strong> ficou no topo com aproximadamente <strong>${hours}</strong>.`,
+    (label, hours) => `Se a sua semana tivesse um “campeão digital”, seria <strong>${label}</strong>: <strong>${hours}</strong>.`,
+    (label, hours) => `Um detalhe curioso: <strong>${label}</strong> foi a atividade digital que ganhou mais espaço na sua semana (<strong>${hours}</strong>).`
+  ],
+  digitalVsFamily: [
+    (digital, family) => `Quando colocamos lado a lado, seu uso digital pessoal ficou em <strong>${digital}</strong> e o convívio presencial em <strong>${family}</strong> na semana.`,
+    (digital, family) => `👨‍👩‍👧 Um contraste interessante: <strong>${digital}</strong> de uso digital pessoal e <strong>${family}</strong> de convívio presencial.`,
+    (digital, family) => `Seu gráfico mostra dois pedaços importantes da rotina: <strong>${digital}</strong> no digital pessoal e <strong>${family}</strong> em convivência presencial.`,
+    (digital, family) => `Olhar os números juntos muda a percepção: digital pessoal <strong>${digital}</strong> × convívio presencial <strong>${family}</strong>.`
+  ],
+  digitalVsReading: [
+    (digital, reading) => `📚 Nesta semana, apareceram <strong>${reading}</strong> de leitura e <strong>${digital}</strong> de uso digital pessoal.`,
+    (digital, reading) => `Leitura e tecnologia contam histórias diferentes do seu tempo: <strong>${reading}</strong> lendo e <strong>${digital}</strong> em usos digitais pessoais.`,
+    (digital, reading) => `Um jeito diferente de olhar a rotina: <strong>${reading}</strong> dedicadas à leitura ao lado de <strong>${digital}</strong> no digital pessoal.`
+  ],
+  digitalVsPhysical: [
+    (digital, physical) => `🏃 Movimento também entrou no seu retrato: <strong>${physical}</strong> na semana, enquanto o uso digital pessoal ficou em <strong>${digital}</strong>.`,
+    (digital, physical) => `Seu corpo e suas telas também disputam espaço na agenda: <strong>${physical}</strong> de movimento e <strong>${digital}</strong> de uso digital pessoal.`,
+    (digital, physical) => `Olha essa comparação: atividade física <strong>${physical}</strong> × uso digital pessoal <strong>${digital}</strong>.`
+  ],
+  offlineStrong: [
+    (offline, digital) => `🌱 As atividades fora das telas somaram <strong>${offline}</strong>, ficando próximas ou acima do seu uso digital pessoal (<strong>${digital}</strong>).`,
+    (offline, digital) => `Legal: leitura, convívio, movimento e hobbies juntos ocuparam <strong>${offline}</strong> — um espaço importante na sua semana.`,
+    (offline, digital) => `Seu retrato mostra bastante presença de atividades fora das telas: <strong>${offline}</strong> na semana, contra <strong>${digital}</strong> de uso digital pessoal.`
+  ],
+  weekendHigher: [
+    (week, weekend) => `✨ Seu uso digital muda no fim de semana: cerca de <strong>${weekend}</strong> por dia, contra <strong>${week}</strong> nos dias úteis.`,
+    (week, weekend) => `Fim de semana parece ser quando o digital ganha mais espaço: <strong>${weekend}</strong>/dia contra <strong>${week}</strong>/dia durante a semana.`,
+    (week, weekend) => `Seu ritmo digital não é igual todos os dias: ele sobe de <strong>${week}</strong> para <strong>${weekend}</strong> por dia no fim de semana.`
+  ],
+  weekdayHigher: [
+    (week, weekend) => `📅 Curiosamente, seu uso digital pessoal é maior nos dias úteis: <strong>${week}</strong>/dia contra <strong>${weekend}</strong>/dia no fim de semana.`,
+    (week, weekend) => `Seu gráfico sugere um ritmo mais digital durante a semana: <strong>${week}</strong>/dia nos dias úteis e <strong>${weekend}</strong>/dia no fim de semana.`
+  ],
+  workContext: [
+    (work) => `💻 Além do uso pessoal, você declarou cerca de <strong>${work}</strong> por semana usando tecnologia para estudo ou trabalho.`,
+    (work) => `Uma parte importante das suas telas tem outro propósito: <strong>${work}</strong> semanais de estudo ou trabalho.`,
+    (work) => `Nem toda tela é entretenimento: no seu caso, estudo e trabalho somaram aproximadamente <strong>${work}</strong> na semana.`
+  ],
+  hobbyPresence: [
+    (hobbies) => `🎨 Seus hobbies sem tela também apareceram: aproximadamente <strong>${hobbies}</strong> ao longo da semana.`,
+    (hobbies) => `Tem criação fora das telas por aí: seus hobbies somaram cerca de <strong>${hobbies}</strong> na semana.`
+  ]
+};
+
 const screens = {
   welcome: document.getElementById("welcome-screen"),
   quiz: document.getElementById("quiz-screen"),
@@ -236,7 +205,6 @@ const answers = {};
 const behaviorAnswers = { overrun: null, bedtime: null };
 let currentQuestion = 0;
 let autoResetTimer = null;
-let lastWeekly = null;
 
 function showScreen(name) {
   Object.values(screens).forEach(screen => screen.classList.remove("active"));
@@ -250,8 +218,7 @@ function formatHours(value) {
   if (rounded < 1) return `${Math.round(rounded * 60)}min`;
   const hours = Math.floor(rounded);
   const minutes = Math.round((rounded - hours) * 60);
-  if (!minutes) return `${hours}h`;
-  return `${hours}h ${minutes}min`;
+  return minutes ? `${hours}h ${minutes}min` : `${hours}h`;
 }
 
 function weeklyValue(answer) {
@@ -271,8 +238,8 @@ function renderTimeOptions(container, period) {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "time-btn";
-    button.textContent = option.label;
-    button.dataset.value = option.value;
+    button.innerHTML = `<span>${option.label}</span>`;
+    button.dataset.value = String(option.value);
     button.setAttribute("role", "radio");
     button.setAttribute("aria-checked", "false");
 
@@ -339,13 +306,8 @@ function renderQuestion() {
   updateNextButton();
 }
 
-function choose(list) {
+function randomItem(list) {
   return list[Math.floor(Math.random() * list.length)];
-}
-
-function splitEmoji(text) {
-  const match = text.match(/^(\S+)\s+(.*)$/);
-  return match ? { emoji: match[1], text: match[2] } : { emoji: "👀", text };
 }
 
 function sumGroup(weekly, group) {
@@ -361,28 +323,93 @@ function topActivity(weekly, group) {
     .sort((a, b) => b.value - a.value)[0];
 }
 
-function getComparison(weekly, digital, offline) {
-  const family = weekly.family;
-  const reading = weekly.reading;
-  const topDigital = topActivity(weekly, "digital");
+function dailyDigital(period) {
+  return QUESTIONS
+    .filter(question => question.group === "digital")
+    .reduce((total, question) => total + (answers[question.id]?.[period] || 0), 0);
+}
 
-  if (family > 0 && digital >= family * 3) {
-    return `👀 Seu uso digital pessoal ficou em cerca de <strong>${(digital / family).toFixed(1).replace(".", ",")} vezes</strong> o tempo de convívio presencial que você declarou.`;
+function buildInsights(weekly, digital, offline, work) {
+  const candidates = [];
+  const top = topActivity(weekly, "digital");
+  const weekdayDigital = dailyDigital("weekday");
+  const weekendDigital = dailyDigital("weekend");
+
+  if (top && top.value > 0) {
+    const label = CHART_META[top.question.id][1];
+    const template = randomItem(INSIGHT_VARIANTS.topDigital);
+    candidates.push({ icon: CHART_META[top.question.id][0], html: template(label, formatHours(top.value)) });
   }
 
-  if (offline > 0 && offline >= digital) {
-    return "😊 O conjunto de leitura, convívio, movimento e hobbies ficou igual ou acima do seu uso digital pessoal.";
+  if (weekly.family > 0) {
+    const template = randomItem(INSIGHT_VARIANTS.digitalVsFamily);
+    candidates.push({ icon: "👨‍👩‍👧", html: template(formatHours(digital), formatHours(weekly.family)) });
   }
 
-  if (reading > 0 && digital >= reading * 4) {
-    return `📚 Seu uso digital pessoal ficou em cerca de <strong>${(digital / reading).toFixed(1).replace(".", ",")} vezes</strong> o tempo dedicado à leitura.`;
+  if (weekly.reading > 0) {
+    const template = randomItem(INSIGHT_VARIANTS.digitalVsReading);
+    candidates.push({ icon: "📚", html: template(formatHours(digital), formatHours(weekly.reading)) });
   }
 
-  if (topDigital && topDigital.value > 0) {
-    return `${CHART_META[topDigital.question.id][0]} Entre as atividades digitais, <strong>${CHART_META[topDigital.question.id][1]}</strong> foi a que mais ocupou tempo na sua semana.`;
+  if (weekly.physical > 0) {
+    const template = randomItem(INSIGHT_VARIANTS.digitalVsPhysical);
+    candidates.push({ icon: "🏃", html: template(formatHours(digital), formatHours(weekly.physical)) });
   }
 
-  return "💭 O mais interessante não é buscar um número perfeito, mas perceber quais atividades estão recebendo mais espaço na sua rotina.";
+  if (offline >= digital && offline > 0) {
+    const template = randomItem(INSIGHT_VARIANTS.offlineStrong);
+    candidates.push({ icon: "🌱", html: template(formatHours(offline), formatHours(digital)) });
+  }
+
+  if (weekendDigital >= weekdayDigital + 0.5) {
+    const template = randomItem(INSIGHT_VARIANTS.weekendHigher);
+    candidates.push({ icon: "✨", html: template(formatHours(weekdayDigital), formatHours(weekendDigital)) });
+  } else if (weekdayDigital >= weekendDigital + 0.5) {
+    const template = randomItem(INSIGHT_VARIANTS.weekdayHigher);
+    candidates.push({ icon: "📅", html: template(formatHours(weekdayDigital), formatHours(weekendDigital)) });
+  }
+
+  if (work > 0) {
+    const template = randomItem(INSIGHT_VARIANTS.workContext);
+    candidates.push({ icon: "💻", html: template(formatHours(work)) });
+  }
+
+  if (weekly.hobbies > 0) {
+    const template = randomItem(INSIGHT_VARIANTS.hobbyPresence);
+    candidates.push({ icon: "🎨", html: template(formatHours(weekly.hobbies)) });
+  }
+
+  const unique = [];
+  const seen = new Set();
+  candidates.forEach(item => {
+    const key = item.html.replace(/<[^>]+>/g, "");
+    if (!seen.has(key)) {
+      seen.add(key);
+      unique.push(item);
+    }
+  });
+
+  // Embaralha e preserva no máximo quatro descobertas para não cansar.
+  return unique.sort(() => Math.random() - 0.5).slice(0, 4);
+}
+
+function renderInsights(weekly, digital, offline, work) {
+  const grid = document.getElementById("insights-grid");
+  const insights = buildInsights(weekly, digital, offline, work);
+
+  if (!insights.length) {
+    insights.push({
+      icon: "💭",
+      html: "O mais interessante não é buscar um número perfeito, mas perceber quais atividades estão recebendo mais espaço na sua rotina."
+    });
+  }
+
+  grid.innerHTML = insights.map(item => `
+    <article class="insight-card">
+      <span class="insight-icon">${item.icon}</span>
+      <p>${item.html}</p>
+    </article>
+  `).join("");
 }
 
 function updateBehaviorInsight() {
@@ -395,31 +422,30 @@ function updateBehaviorInsight() {
   }
 
   if (overrun === "often" && bedtime === "often") {
-    el.innerHTML = "👀 Você contou que <strong>muitas vezes passa do tempo que pretendia</strong> e usa telas <strong>quase todos os dias antes de dormir</strong>. Talvez valha observar quais momentos estão acontecendo mais no automático.";
+    el.innerHTML = "👀 Você percebeu dois hábitos ao mesmo tempo: às vezes o uso passa do planejado e as telas aparecem muito perto da hora de dormir. Talvez valha só observar quando isso acontece.";
     return;
   }
 
   if (overrun === "often") {
-    el.innerHTML = "⏳ Você contou que <strong>muitas vezes fica mais tempo nas telas do que pretendia</strong>. Compare essa percepção com as horas que apareceram no seu resultado.";
+    el.innerHTML = "⏳ Você contou que muitas vezes fica mais tempo nas telas do que pretendia. Agora que o total está visível, fica mais fácil perceber em quais atividades isso pode acontecer.";
     return;
   }
 
   if (bedtime === "often") {
-    el.innerHTML = "🌙 Você contou que usa telas <strong>quase todos os dias antes de dormir</strong>. Esse é um hábito interessante para observar na sua rotina.";
+    el.innerHTML = "🌙 As telas aparecem quase todos os dias perto da hora de dormir. Não é uma nota nem um problema automático — é só mais um pedacinho interessante do seu padrão.";
     return;
   }
 
   if (overrun === "never" && bedtime === "never") {
-    el.innerHTML = "🙂 Você relatou bastante controle nesses dois hábitos. Ainda assim, o gráfico ajuda a enxergar como o tempo se distribui.";
+    el.innerHTML = "🙂 Nesses dois hábitos, você percebe bastante controle. O gráfico ajuda a complementar essa percepção com o tempo declarado.";
     return;
   }
 
-  el.innerHTML = "💡 Seus hábitos variam conforme o dia. Perceber quando o uso é intencional e quando acontece no automático já é uma informação importante.";
+  el.innerHTML = "💡 Seus hábitos mudam conforme o dia. Perceber quando o uso foi escolhido e quando aconteceu no automático já é uma descoberta importante.";
 }
 
 function calculateResults() {
   const weekly = {};
-
   QUESTIONS.forEach(question => {
     weekly[question.id] = weeklyValue(answers[question.id]);
   });
@@ -427,22 +453,27 @@ function calculateResults() {
   const digital = sumGroup(weekly, "digital");
   const work = sumGroup(weekly, "work");
   const offline = sumGroup(weekly, "offline");
-
   const month = digital * 4.35;
   const year = digital * 52;
   const days = year / 24;
 
-  let bucket = "balanced";
-  if (digital > 42) bucket = "veryHigh";
-  else if (digital > 28) bucket = "high";
-  else if (digital > 14) bucket = "moderate";
+  let tone = "low";
+  if (digital > 42) tone = "veryHigh";
+  else if (digital > 28) tone = "high";
+  else if (digital > 14) tone = "medium";
 
-  const main = splitEmoji(choose(COMMENTS[bucket]));
-  const reflection = splitEmoji(choose(COMMENTS.reflection));
+  const [emoji, text] = randomItem(MAIN_COMMENTS[tone]);
+  document.getElementById("reaction-emoji").textContent = emoji;
+  document.getElementById("reaction-text").textContent = text;
 
-  document.getElementById("reaction-emoji").textContent = main.emoji;
-  document.getElementById("reaction-text").textContent = main.text;
-  document.getElementById("reflection-text").textContent = `${reflection.emoji} ${reflection.text}`;
+  const top = topActivity(weekly, "digital");
+  if (top && top.value > 0) {
+    document.getElementById("reflection-text").textContent =
+      `Seu maior bloco digital foi ${CHART_META[top.question.id][1].toLowerCase()}. Veja abaixo como ele se compara com o restante da sua rotina.`;
+  } else {
+    document.getElementById("reflection-text").textContent =
+      "O gráfico abaixo ajuda a enxergar como diferentes partes da sua rotina se distribuem.";
+  }
 
   document.getElementById("screen-week").textContent = formatHours(digital);
   document.getElementById("offline-week").textContent = formatHours(offline);
@@ -451,8 +482,7 @@ function calculateResults() {
   document.getElementById("screen-year").textContent = formatHours(year);
   document.getElementById("screen-days").textContent = `${Math.round(days)} dias inteiros`;
 
-  document.getElementById("comparison-card").innerHTML = getComparison(weekly, digital, offline);
-  lastWeekly = weekly;
+  renderInsights(weekly, digital, offline, work);
   renderChart(weekly);
   updateBehaviorInsight();
 }
@@ -468,7 +498,6 @@ function renderChart(weekly) {
 
     const row = document.createElement("div");
     row.className = `chart-row chart-row-${type}`;
-
     row.innerHTML = `
       <div class="chart-label">
         <span>${icon}</span>
@@ -479,7 +508,6 @@ function renderChart(weekly) {
         <span style="width:${Math.max((value / max) * 100, value ? 4 : 0)}%"></span>
       </div>
     `;
-
     chart.appendChild(row);
   });
 }
@@ -487,7 +515,6 @@ function renderChart(weekly) {
 function showResults() {
   calculateResults();
   showScreen("result");
-
   clearTimeout(autoResetTimer);
   autoResetTimer = setTimeout(resetKiosk, 90000);
 }
@@ -497,7 +524,6 @@ function resetKiosk() {
   Object.keys(answers).forEach(key => delete answers[key]);
   behaviorAnswers.overrun = null;
   behaviorAnswers.bedtime = null;
-  lastWeekly = null;
   currentQuestion = 0;
 
   document.querySelectorAll(".quick-options button").forEach(button => {
