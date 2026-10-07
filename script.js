@@ -206,10 +206,127 @@ const behaviorAnswers = { overrun: null, bedtime: null };
 let currentQuestion = 0;
 let autoResetTimer = null;
 
+const launchScreen = document.getElementById("launch-screen");
+const launchButton = document.getElementById("launch-btn");
+const appShell = document.getElementById("app-shell");
+const fitStage = document.getElementById("fit-stage");
+const fitContent = document.getElementById("fit-content");
+
+let kioskStarted = false;
+let fitFrame = null;
+
+function isFullscreenActive() {
+  return Boolean(document.fullscreenElement || document.webkitFullscreenElement);
+}
+
+async function enterFullscreen() {
+  const target = document.documentElement;
+
+  try {
+    if (target.requestFullscreen) {
+      await target.requestFullscreen({ navigationUI: "hide" });
+      return true;
+    }
+
+    if (target.webkitRequestFullscreen) {
+      target.webkitRequestFullscreen();
+      return true;
+    }
+  } catch (error) {
+    console.warn("Não foi possível entrar em tela cheia automaticamente:", error);
+  }
+
+  return false;
+}
+
+function revealKiosk() {
+  kioskStarted = true;
+  launchScreen.classList.add("is-hidden");
+  appShell.classList.remove("kiosk-hidden");
+  appShell.setAttribute("aria-hidden", "false");
+  requestFit();
+}
+
+function showFullscreenGate() {
+  if (!kioskStarted) return;
+
+  launchScreen.classList.remove("is-hidden");
+  launchScreen.classList.add("resume-mode");
+  appShell.classList.add("kiosk-hidden");
+  appShell.setAttribute("aria-hidden", "true");
+
+  const strong = launchButton.querySelector("strong");
+  const small = launchButton.querySelector("small");
+  if (strong) strong.textContent = "Continuar";
+  if (small) small.textContent = "voltar para tela cheia";
+}
+
+function measureAndFit() {
+  if (!kioskStarted || appShell.classList.contains("kiosk-hidden")) return;
+
+  fitContent.style.transform = "none";
+
+  const stageWidth = Math.max(fitStage.clientWidth - 32, 1);
+  const stageHeight = Math.max(fitStage.clientHeight - 32, 1);
+  const naturalWidth = Math.max(fitContent.scrollWidth, 1);
+  const naturalHeight = Math.max(fitContent.scrollHeight, 1);
+
+  const scale = Math.min(1, stageWidth / naturalWidth, stageHeight / naturalHeight);
+  fitContent.style.transform = `scale(${Math.max(scale, 0.42)})`;
+}
+
+function requestFit() {
+  cancelAnimationFrame(fitFrame);
+  fitFrame = requestAnimationFrame(() => {
+    requestAnimationFrame(measureAndFit);
+  });
+}
+
+launchButton.addEventListener("click", async () => {
+  await enterFullscreen();
+
+  launchScreen.classList.remove("resume-mode");
+  const strong = launchButton.querySelector("strong");
+  const small = launchButton.querySelector("small");
+  if (strong) strong.textContent = "Começar";
+  if (small) small.textContent = "clique para entrar";
+
+  revealKiosk();
+});
+
+document.addEventListener("fullscreenchange", () => {
+  if (!kioskStarted) return;
+  if (isFullscreenActive()) {
+    revealKiosk();
+  } else {
+    showFullscreenGate();
+  }
+});
+
+document.addEventListener("webkitfullscreenchange", () => {
+  if (!kioskStarted) return;
+  if (isFullscreenActive()) {
+    revealKiosk();
+  } else {
+    showFullscreenGate();
+  }
+});
+
+window.addEventListener("resize", requestFit);
+
+document.addEventListener("wheel", event => {
+  if (kioskStarted) event.preventDefault();
+}, { passive: false });
+
+document.addEventListener("touchmove", event => {
+  if (kioskStarted) event.preventDefault();
+}, { passive: false });
+
+
 function showScreen(name) {
   Object.values(screens).forEach(screen => screen.classList.remove("active"));
   screens[name].classList.add("active");
-  window.scrollTo({ top: 0, behavior: "instant" });
+  requestFit();
 }
 
 function formatHours(value) {
@@ -485,6 +602,7 @@ function calculateResults() {
   renderInsights(weekly, digital, offline, work);
   renderChart(weekly);
   updateBehaviorInsight();
+  requestFit();
 }
 
 function renderChart(weekly) {
@@ -544,7 +662,7 @@ document.getElementById("back-btn").addEventListener("click", () => {
   if (currentQuestion === 0) return;
   currentQuestion--;
   renderQuestion();
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  requestFit();
 });
 
 document.getElementById("next-btn").addEventListener("click", () => {
@@ -560,7 +678,7 @@ document.getElementById("next-btn").addEventListener("click", () => {
 
   currentQuestion++;
   renderQuestion();
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  requestFit();
 });
 
 document.querySelectorAll(".quick-options").forEach(group => {
@@ -572,6 +690,7 @@ document.querySelectorAll(".quick-options").forEach(group => {
     button.classList.add("selected");
     behaviorAnswers[group.dataset.behavior] = button.dataset.value;
     updateBehaviorInsight();
+    requestFit();
   });
 });
 
