@@ -272,7 +272,7 @@ function measureAndFit() {
   const naturalHeight = Math.max(fitContent.scrollHeight, 1);
 
   const scale = Math.min(1, stageWidth / naturalWidth, stageHeight / naturalHeight);
-  fitContent.style.transform = `scale(${Math.max(scale, 0.42)})`;
+  fitContent.style.transform = `scale(${scale})`;
 }
 
 function requestFit() {
