@@ -33,7 +33,8 @@
         <h1>Como o seu tempo se divide entre <em>telas</em> e o resto da vida?</h1>
         <p class="hero-copy">
           Responda pensando em um dia comum. No final, você verá uma estimativa semanal,
-          mensal e anual dos seus hábitos.
+          mensal e anual dos seus hábitos. Se duas atividades acontecerem ao mesmo tempo,
+          considere apenas a que estava ocupando mais a sua atenção.
         </p>
 
         <div class="feature-grid">
@@ -126,7 +127,7 @@
 
         <div class="headline-grid">
           <div class="metric-card metric-card-screen">
-            <span>📱 Tempo declarado em telas</span>
+            <span>📱 Uso digital pessoal</span>
             <strong id="screen-week">0h</strong>
             <small>por semana</small>
           </div>
@@ -138,7 +139,7 @@
           </div>
 
           <div class="metric-card metric-card-work">
-            <span>💻 Estudo / trabalho em computador</span>
+            <span>💻 Estudo / trabalho com tecnologia</span>
             <strong id="work-week">0h</strong>
             <small>por semana</small>
           </div>
@@ -161,6 +162,35 @@
 
         <div id="comparison-card" class="comparison-card"></div>
 
+        <section class="quick-check-panel">
+          <div class="section-title">
+            <span class="eyebrow eyebrow-small">DUAS PERGUNTAS RÁPIDAS</span>
+            <h2>E no dia a dia?</h2>
+          </div>
+
+          <div class="quick-question">
+            <strong>⏳ Você costuma ficar mais tempo nas telas do que pretendia?</strong>
+            <div class="quick-options" data-behavior="overrun">
+              <button type="button" data-value="never">Nunca</button>
+              <button type="button" data-value="sometimes">Às vezes</button>
+              <button type="button" data-value="often">Muitas vezes</button>
+            </div>
+          </div>
+
+          <div class="quick-question">
+            <strong>🌙 Você costuma usar alguma tela pouco antes de dormir?</strong>
+            <div class="quick-options" data-behavior="bedtime">
+              <button type="button" data-value="never">Nunca</button>
+              <button type="button" data-value="sometimes">Às vezes</button>
+              <button type="button" data-value="often">Quase todos os dias</button>
+            </div>
+          </div>
+
+          <div id="behavior-insight" class="behavior-insight">
+            Essas respostas não mudam suas horas. Elas só ajudam a refletir sobre seus hábitos.
+          </div>
+        </section>
+
         <section class="chart-panel">
           <div class="section-title">
             <span class="eyebrow eyebrow-small">POR ATIVIDADE</span>
@@ -172,13 +202,12 @@
         <div class="calculation-note">
           <strong>Como calculamos?</strong>
           <p>
-            Para a estimativa principal de telas, usamos celular + TV/vídeos.
-            Computador/tablet para estudo ou trabalho aparece separado.
-            Redes sociais e jogos aparecem no gráfico, mas não são somados novamente
-            porque podem acontecer dentro do celular ou computador.
+            O uso digital pessoal soma mensagens, redes sociais e vídeos curtos, jogos,
+            vídeos/filmes/TV e outros usos da tecnologia. Estudo e trabalho aparecem separados.
           </p>
           <p>
-            Nas opções “5h+”, o cálculo considera 5 horas. O resultado pode ser um pouco menor que o tempo real.
+            Se duas atividades aconteceram ao mesmo tempo, considere a atividade principal.
+            Nas opções “4h+”, o cálculo considera 4 horas, então o resultado pode ser um pouco menor que o tempo real.
           </p>
         </div>
 
