@@ -2191,3 +2191,24 @@ button:focus-visible {
 .footer a:hover {
   color: var(--purple-2);
 }
+
+
+/* Ajuste de contraste do botão de entrada: roxo + branco */
+.launch-button {
+  color: #ffffff;
+}
+
+.launch-play {
+  color: #ffffff;
+  background: rgba(255,255,255,.18);
+  border: 1px solid rgba(255,255,255,.16);
+}
+
+.launch-label strong {
+  color: #ffffff;
+}
+
+.launch-label small {
+  color: rgba(255,255,255,.82);
+  opacity: 1;
+}
