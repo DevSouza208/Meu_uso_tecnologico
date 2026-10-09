@@ -1370,3 +1370,253 @@ body {
     height: 56px;
   }
 }
+
+
+/* =========================================================
+   RESULTADO — OTIMIZAÇÃO PARA MONITOR / LANDSCAPE
+   Usa mais largura para evitar que o auto-fit encolha tudo.
+   ========================================================= */
+
+@media (min-width: 761px) {
+  .fit-content.result-mode {
+    width: 1420px;
+  }
+
+  #result-screen.active .result-panel {
+    grid-template-columns: 1.05fr 1fr 1fr;
+    grid-template-areas:
+      "badge badge badge"
+      "title title reaction"
+      "intro intro reaction"
+      "metrics projections projections"
+      "insights quick quick"
+      "chart chart chart"
+      "note final final"
+      "restart restart restart";
+    gap: 8px 10px;
+    padding: 18px;
+    border-radius: 24px;
+  }
+
+  #result-screen .result-panel > h1 {
+    font-size: 2rem;
+    line-height: 1.02;
+  }
+
+  #result-screen .result-intro {
+    font-size: .78rem;
+    line-height: 1.35;
+  }
+
+  #result-screen .reaction-row {
+    grid-template-columns: 58px 1fr;
+    gap: 10px;
+    align-self: stretch;
+  }
+
+  #result-screen .reaction-emoji {
+    width: 58px;
+    height: 58px;
+    border-radius: 18px;
+    font-size: 1.8rem;
+  }
+
+  #result-screen .speech-bubble {
+    padding: 11px 13px;
+    border-radius: 16px;
+    gap: 3px;
+  }
+
+  #result-screen .speech-bubble::before {
+    top: 21px;
+  }
+
+  #result-screen .speech-bubble strong {
+    font-size: .83rem;
+    line-height: 1.25;
+  }
+
+  #result-screen .speech-bubble span {
+    font-size: .7rem;
+    line-height: 1.3;
+  }
+
+  #result-screen .headline-grid {
+    gap: 8px;
+  }
+
+  #result-screen .metric-card {
+    min-height: 92px;
+    padding: 11px 12px;
+    border-radius: 16px;
+  }
+
+  #result-screen .metric-card > span {
+    font-size: .66rem;
+    line-height: 1.25;
+  }
+
+  #result-screen .metric-card strong {
+    font-size: 1.45rem;
+  }
+
+  #result-screen .metric-card small {
+    font-size: .65rem;
+  }
+
+  #result-screen .projection-grid {
+    gap: 8px;
+  }
+
+  #result-screen .projection-grid div {
+    min-height: 92px;
+    padding: 11px 13px;
+    justify-content: center;
+  }
+
+  #result-screen .projection-grid span {
+    font-size: .64rem;
+  }
+
+  #result-screen .projection-grid strong {
+    font-size: .95rem;
+  }
+
+  #result-screen .insights-panel,
+  #result-screen .quick-check-panel,
+  #result-screen .chart-panel {
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  #result-screen .section-title h2 {
+    margin: 5px 0 9px;
+    font-size: 1.18rem;
+  }
+
+  #result-screen .eyebrow-small {
+    padding: 4px 7px;
+    font-size: .52rem;
+  }
+
+  #result-screen .insights-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  #result-screen .insight-card {
+    min-height: 0;
+    padding: 9px 10px;
+    border-radius: 14px;
+  }
+
+  #result-screen .insight-icon {
+    display: inline-grid;
+    width: 24px;
+    height: 24px;
+    margin: 0 5px 0 0;
+    font-size: .9rem;
+    vertical-align: middle;
+  }
+
+  #result-screen .insight-card p {
+    display: inline;
+    font-size: .68rem;
+    line-height: 1.35;
+  }
+
+  #result-screen .quick-question + .quick-question {
+    margin-top: 8px;
+  }
+
+  #result-screen .quick-question > strong {
+    margin-bottom: 6px;
+    font-size: .72rem;
+    line-height: 1.3;
+  }
+
+  #result-screen .quick-options {
+    gap: 6px;
+  }
+
+  #result-screen .quick-options button {
+    min-height: 32px;
+    padding: 6px 8px;
+    border-radius: 10px;
+    font-size: .68rem;
+  }
+
+  #result-screen .behavior-insight {
+    margin-top: 8px;
+    padding: 9px 10px;
+    font-size: .67rem;
+    line-height: 1.35;
+  }
+
+  #result-screen .chart-panel {
+    padding: 12px 14px;
+  }
+
+  #result-screen .chart {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    column-gap: 12px;
+    row-gap: 8px;
+  }
+
+  #result-screen .chart-row {
+    gap: 3px;
+  }
+
+  #result-screen .chart-label {
+    grid-template-columns: 20px 1fr auto;
+    gap: 5px;
+  }
+
+  #result-screen .chart-label strong,
+  #result-screen .chart-label b {
+    font-size: .64rem;
+  }
+
+  #result-screen .chart-track {
+    height: 6px;
+  }
+
+  #result-screen .calculation-note,
+  #result-screen .final-message {
+    padding: 12px 14px;
+    border-radius: 15px;
+  }
+
+  #result-screen .calculation-note strong {
+    font-size: .72rem;
+  }
+
+  #result-screen .calculation-note p {
+    margin-top: 4px;
+    font-size: .63rem;
+    line-height: 1.35;
+  }
+
+  #result-screen .final-message {
+    align-items: center;
+  }
+
+  #result-screen .final-message > span {
+    font-size: 1.2rem;
+  }
+
+  #result-screen .final-message p {
+    font-size: .74rem;
+    line-height: 1.35;
+  }
+
+  #result-screen #restart-btn {
+    max-width: none;
+    padding: 12px 18px;
+  }
+
+  .fit-content.result-mode .footer {
+    padding-top: 6px;
+    font-size: .62rem;
+  }
+}
