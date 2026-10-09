@@ -205,6 +205,8 @@ const answers = {};
 const behaviorAnswers = { overrun: null, bedtime: null };
 let currentQuestion = 0;
 let autoResetTimer = null;
+let idleTimer = null;
+const IDLE_TIMEOUT_MS = 120000;
 
 const launchScreen = document.getElementById("launch-screen");
 const launchButton = document.getElementById("launch-btn");
@@ -245,6 +247,7 @@ function revealKiosk() {
   appShell.classList.remove("kiosk-hidden");
   appShell.setAttribute("aria-hidden", "false");
   requestFit();
+  resetIdleTimer();
 }
 
 function showFullscreenGate() {
@@ -635,11 +638,26 @@ function showResults() {
   calculateResults();
   showScreen("result");
   clearTimeout(autoResetTimer);
-  autoResetTimer = setTimeout(resetKiosk, 90000);
+  autoResetTimer = setTimeout(resetKiosk, IDLE_TIMEOUT_MS);
+  resetIdleTimer();
 }
+
+function resetIdleTimer() {
+  if (!kioskStarted || appShell.classList.contains("kiosk-hidden")) return;
+
+  clearTimeout(idleTimer);
+  idleTimer = setTimeout(() => {
+    resetKiosk();
+  }, IDLE_TIMEOUT_MS);
+}
+
+["pointerdown", "pointermove", "keydown", "touchstart"].forEach(eventName => {
+  document.addEventListener(eventName, resetIdleTimer, { passive: true });
+});
 
 function resetKiosk() {
   clearTimeout(autoResetTimer);
+  clearTimeout(idleTimer);
   Object.keys(answers).forEach(key => delete answers[key]);
   behaviorAnswers.overrun = null;
   behaviorAnswers.bedtime = null;
@@ -651,6 +669,7 @@ function resetKiosk() {
 
   updateBehaviorInsight();
   showScreen("welcome");
+  resetIdleTimer();
 }
 
 document.getElementById("start-btn").addEventListener("click", () => {
