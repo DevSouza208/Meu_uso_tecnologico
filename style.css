@@ -7,8 +7,8 @@
   --line: #34343a;
   --text: #f7f7f8;
   --muted: #a6a6ae;
-  --green: #00e676;
-  --green-2: #51f7a0;
+  --green: #8a2be2;
+  --green-2: #b46cff;
   --purple: #8a2be2;
   --purple-2: #b46cff;
   --orange: #ff9f43;
@@ -32,7 +32,7 @@ body {
   color: var(--text);
   background:
     radial-gradient(circle at 10% 0%, rgba(138,43,226,.22), transparent 28rem),
-    radial-gradient(circle at 90% 10%, rgba(0,230,118,.12), transparent 25rem),
+    radial-gradient(circle at 90% 10%, rgba(138,43,226,.12), transparent 25rem),
     linear-gradient(180deg, #111 0%, #171719 50%, #101010 100%);
   font-family: 'Poppins', system-ui, sans-serif;
 }
@@ -140,8 +140,8 @@ button {
   justify-content: center;
   padding: 8px 12px;
   border-radius: 999px;
-  background: rgba(0,230,118,.1);
-  border: 1px solid rgba(0,230,118,.18);
+  background: rgba(138,43,226,.1);
+  border: 1px solid rgba(138,43,226,.18);
   color: var(--green);
   font-size: .7rem;
   font-weight: 800;
@@ -218,7 +218,7 @@ button {
   color: #07110b;
   background: linear-gradient(135deg, var(--green), var(--green-2));
   font-weight: 800;
-  box-shadow: 0 12px 30px rgba(0,230,118,.18);
+  box-shadow: 0 12px 30px rgba(138,43,226,.18);
   transition: .18s ease;
 }
 
@@ -301,7 +301,7 @@ button {
   width: 64px;
   height: 64px;
   border-radius: 20px;
-  background: linear-gradient(145deg, rgba(138,43,226,.18), rgba(0,230,118,.08));
+  background: linear-gradient(145deg, rgba(138,43,226,.18), rgba(138,43,226,.08));
   border: 1px solid #3c3c43;
   font-size: 2rem;
 }
@@ -435,9 +435,9 @@ button {
   flex-direction: column;
   gap: 6px;
   padding: 18px 20px;
-  border: 1px solid rgba(0,230,118,.2);
+  border: 1px solid rgba(138,43,226,.2);
   border-radius: 22px;
-  background: rgba(0,230,118,.07);
+  background: rgba(138,43,226,.07);
 }
 
 .speech-bubble::before {
@@ -449,8 +449,8 @@ button {
   height: 16px;
   transform: rotate(45deg);
   background: #1e2923;
-  border-left: 1px solid rgba(0,230,118,.2);
-  border-bottom: 1px solid rgba(0,230,118,.2);
+  border-left: 1px solid rgba(138,43,226,.2);
+  border-bottom: 1px solid rgba(138,43,226,.2);
 }
 
 .speech-bubble strong {
@@ -501,7 +501,7 @@ button {
 }
 
 .metric-card-offline strong {
-  color: #75df99;
+  color: #c084fc;
 }
 
 .metric-card-work strong {
@@ -597,11 +597,11 @@ button {
   display: block;
   height: 100%;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--green), #37ff99);
+  background: linear-gradient(90deg, var(--green), #b46cff);
 }
 
 .chart-row-offline .chart-track span {
-  background: linear-gradient(90deg, #31c96e, #75df99);
+  background: linear-gradient(90deg, #7c3aed, #c084fc);
 }
 
 .chart-row-work .chart-track span {
@@ -639,8 +639,8 @@ button {
   padding: 18px;
   margin-bottom: 18px;
   border-radius: 20px;
-  border: 1px solid rgba(0,230,118,.2);
-  background: rgba(0,230,118,.06);
+  border: 1px solid rgba(138,43,226,.2);
+  background: rgba(138,43,226,.06);
 }
 
 .final-message > span {
@@ -829,7 +829,7 @@ button {
 }
 
 .chart-row-digital .chart-track span {
-  background: linear-gradient(90deg, var(--green), #37ff99);
+  background: linear-gradient(90deg, var(--green), #b46cff);
 }
 
 @media (max-width: 560px) {
@@ -987,7 +987,7 @@ body {
   overflow: hidden;
   background:
     radial-gradient(circle at 50% 42%, rgba(138,43,226,.20), transparent 22rem),
-    radial-gradient(circle at 50% 58%, rgba(0,230,118,.10), transparent 25rem),
+    radial-gradient(circle at 50% 58%, rgba(138,43,226,.10), transparent 25rem),
     #101012;
   transition: opacity .28s ease, visibility .28s ease;
 }
@@ -1023,21 +1023,21 @@ body {
   min-height: 112px;
   margin: 0 auto 28px;
   padding: 18px 34px;
-  border: 1px solid rgba(0,230,118,.28);
+  border: 1px solid rgba(138,43,226,.28);
   border-radius: 32px;
   color: #06110a;
   background: linear-gradient(135deg, var(--green), var(--green-2));
   box-shadow:
-    0 24px 70px rgba(0,230,118,.20),
-    0 0 0 10px rgba(0,230,118,.035);
+    0 24px 70px rgba(138,43,226,.20),
+    0 0 0 10px rgba(138,43,226,.035);
   transition: transform .18s ease, box-shadow .18s ease;
 }
 
 .launch-button:hover {
   transform: scale(1.035);
   box-shadow:
-    0 28px 80px rgba(0,230,118,.26),
-    0 0 0 14px rgba(0,230,118,.045);
+    0 28px 80px rgba(138,43,226,.26),
+    0 0 0 14px rgba(138,43,226,.045);
 }
 
 .launch-button:active {
@@ -1110,7 +1110,7 @@ body {
   bottom: 10%;
   width: 230px;
   height: 230px;
-  background: rgba(0,230,118,.12);
+  background: rgba(138,43,226,.12);
 }
 
 .app-shell {
@@ -1751,7 +1751,7 @@ body {
 .launch-screen {
   background:
     radial-gradient(circle at 22% 28%, rgba(138,43,226,.22), transparent 24rem),
-    radial-gradient(circle at 78% 72%, rgba(0,230,118,.14), transparent 28rem),
+    radial-gradient(circle at 78% 72%, rgba(138,43,226,.14), transparent 28rem),
     linear-gradient(145deg, #0c0c0e 0%, #111114 52%, #0b100d 100%);
 }
 
@@ -1762,7 +1762,7 @@ body {
 .launch-kicker {
   margin-bottom: 24px;
   font-size: .82rem;
-  text-shadow: 0 0 24px rgba(0,230,118,.28);
+  text-shadow: 0 0 24px rgba(138,43,226,.28);
 }
 
 .launch-button {
@@ -1892,7 +1892,7 @@ body {
   .insight-card:hover,
   .period-card:hover {
     transform: translateY(-3px);
-    border-color: rgba(0,230,118,.28);
+    border-color: rgba(138,43,226,.28);
     box-shadow: 0 12px 28px rgba(0,0,0,.20);
   }
 
@@ -1938,7 +1938,7 @@ body {
     padding: 20px;
     border-radius: 26px;
     background:
-      radial-gradient(circle at 90% 0%, rgba(0,230,118,.045), transparent 28rem),
+      radial-gradient(circle at 90% 0%, rgba(138,43,226,.045), transparent 28rem),
       radial-gradient(circle at 0% 100%, rgba(138,43,226,.045), transparent 30rem),
       var(--panel-glass);
   }
@@ -2099,7 +2099,7 @@ body {
     min-height: 48px;
     border-radius: 14px;
     font-size: .88rem;
-    box-shadow: 0 10px 26px rgba(0,230,118,.16);
+    box-shadow: 0 10px 26px rgba(138,43,226,.16);
   }
 
   .fit-content.result-mode .footer {
@@ -2109,7 +2109,7 @@ body {
 
 /* Teclado e acessibilidade visual */
 button:focus-visible {
-  outline: 3px solid rgba(81,247,160,.9);
+  outline: 3px solid rgba(180,108,255,.9);
   outline-offset: 3px;
 }
 
@@ -2155,12 +2155,12 @@ button:focus-visible {
   .period-card:hover {
     z-index: 30;
     transform: scale(1.075);
-    border-color: rgba(81,247,160,.42);
+    border-color: rgba(180,108,255,.42);
     background-color: #29292f;
     box-shadow:
       0 22px 54px rgba(0,0,0,.42),
-      0 0 0 1px rgba(81,247,160,.08),
-      0 0 34px rgba(0,230,118,.10);
+      0 0 0 1px rgba(180,108,255,.08),
+      0 0 34px rgba(138,43,226,.10);
     transition-delay: 0s;
   }
 
