@@ -326,6 +326,7 @@ document.addEventListener("touchmove", event => {
 function showScreen(name) {
   Object.values(screens).forEach(screen => screen.classList.remove("active"));
   screens[name].classList.add("active");
+  fitContent.classList.toggle("result-mode", name === "result");
   requestFit();
 }
 
